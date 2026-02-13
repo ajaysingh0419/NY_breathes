@@ -1,0 +1,9 @@
+CLAUDE.md
+data/
+output/*.mp4
+output/*.gif
+nul
+__pycache__/
+*.pyc
+*.R
+frame_*.png

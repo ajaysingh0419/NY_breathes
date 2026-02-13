@@ -1,0 +1,10 @@
+pandas
+pyarrow
+matplotlib
+datashader
+imageio
+imageio-ffmpeg
+Pillow
+geopandas
+shapely
+contextily
