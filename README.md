@@ -1,49 +1,86 @@
-# City Breathing
+# 🌆 City Breathing
+Animated geospatial heatmap of ~1.8M NYC Citi Bike trips (January 2026), visualizing how the city “breathes” over a 24-hour cycle.
 
-Animated heatmap of ~1.8M NYC Citi Bike trips from January 2026, showing the city "breathing" through a 24-hour cycle.
+From sparse 3 AM streets to peak 5 PM congestion, the animation loops seamlessly to reveal urban mobility patterns at scale.
 
-Sparse nighttime to packed daytime to sparse nighttime, looping seamlessly.
+---
 
-## Preview
+## 🚀 Project Overview
 
-**Peak hour (5:00 PM)** - ~4,865 avg rides/hr
+City Breathing transforms raw Citi Bike trip records into a high-performance, time-aware geospatial visualization pipeline.
 
-![Peak](output/city_breathing_peak.png)
+It processes ~1.8 million trip records, aggregates them by hour, renders datashader heatmaps, and outputs a production-ready looping animation (MP4 + GIF).
 
-**Night (3:00 AM)** - ~195 avg rides/hr
+This project demonstrates scalable data transformation, spatial analytics, and efficient rendering of large datasets.
 
-![Night](output/city_breathing_night.png)
+---
 
-## How it works
+## 📊 What This Demonstrates
 
-1. Downloads ~1.8M Citi Bike trip records (January 2026) from S3
-2. Groups trips by hour and renders each as a datashader heatmap
-3. Applies multi-layer neon glow on a dark satellite basemap
-4. Interpolates 120 frames across 24 hours for smooth animation
-5. Outputs a 10-second looping MP4 + GIF
+✔ Large-scale data ingestion (~1.8M records)  
+✔ Efficient group-by aggregation and hourly bucketing  
+✔ High-performance geospatial rendering with datashader  
+✔ Image compositing and frame interpolation  
+✔ Automated end-to-end data pipeline → visualization artifact  
 
-## Stack
+This mirrors real-world data engineering workflows:
+Raw data → Transform → Aggregate → Render → Deliver artifact
 
-- **pandas** - data loading
-- **datashader** - fast point aggregation for millions of trips
-- **Pillow** - image compositing, neon glow, text overlays
-- **contextily** - satellite basemap tiles (Esri)
-- **imageio** - MP4 and GIF encoding
+---
 
-## Run it
+## 🧠 How It Works
+
+1. Downloads Citi Bike trip data from S3
+2. Loads and processes data using pandas
+3. Groups trips by hour (24-hour cycle)
+4. Aggregates millions of points using datashader
+5. Applies neon glow compositing over satellite basemap
+6. Interpolates 120 frames for smooth animation
+7. Exports optimized MP4 + GIF outputs
+
+---
+
+## 🛠️ Tech Stack
+
+- pandas — data ingestion & transformation  
+- datashader — scalable point aggregation  
+- Pillow — image compositing & glow effects  
+- contextily — satellite basemap tiles (Esri)  
+- imageio — animation encoding  
+
+---
+
+## 📈 Why It Matters (Business Value)
+
+Urban mobility data is widely used for:
+
+- Demand forecasting
+- Traffic pattern analytics
+- Infrastructure planning
+- Ride-share optimization
+- Mobility anomaly detection
+
+This project demonstrates the ability to:
+• Convert large, messy datasets into insight-ready outputs  
+• Handle high-volume spatial data efficiently  
+• Build reproducible, automated visualization pipelines  
+• Deliver analytics artifacts suitable for stakeholders  
+
+---
+
+## 📦 Output
+
+| File | Description |
+|------|-------------|
+| city_breathing.mp4 | 10-second looping animation (~1 MB) |
+| city_breathing.gif | Same animation as GIF (~62 MB) |
+| city_breathing_peak.png | Peak hour thumbnail |
+| city_breathing_night.png | Night thumbnail |
+
+---
+
+## ▶ Run Locally
 
 ```bash
 pip install -r requirements.txt
 python city_breathing.py
-```
-
-Data is auto-downloaded on first run. Output goes to `output/`.
-
-## Output
-
-| File | Description |
-|------|-------------|
-| `city_breathing.mp4` | 10-second looping animation (~1 MB) |
-| `city_breathing.gif` | Same animation as GIF (~62 MB) |
-| `city_breathing_peak.png` | Peak hour thumbnail |
-| `city_breathing_night.png` | Night thumbnail |
