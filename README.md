@@ -3,7 +3,7 @@
 Animated geospatial heatmap of ~1.8M NYC Citi Bike trips (January 2026), visualizing how the city “breathes” over a 24-hour cycle.
 
 From sparse 3 AM streets to peak 5 PM congestion, the animation loops seamlessly to reveal urban mobility patterns at scale.
-
+<img src="city_breathing.gif" width="500" alt="App Demo">
 ---
 
 ## 🚀 Project Overview
