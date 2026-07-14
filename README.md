@@ -1,3 +1,4 @@
+
 # 🌆 City Breathing
 Animated geospatial heatmap of ~1.8M NYC Citi Bike trips (January 2026), visualizing how the city “breathes” over a 24-hour cycle.
 
